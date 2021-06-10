@@ -224,25 +224,25 @@ class FriendTile extends StatelessWidget {
               scale: 0.75, child: relation_types[this.friend.type.toString()]),
           Expanded(child: SizedBox()),
           IconButton(
-              tooltip: "Copy User ID",
+              tooltip: "Copy Username",
               icon: Icon(
                 Feather.copy,
                 color: accentColor1,
               ),
               onPressed: () async {
-                FlutterClipboard.copy(this.friend.id).then((value) {
+                FlutterClipboard.copy(this.friend.username).then((value) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       backgroundColor: secondaryColor,
                       duration: Duration(seconds: 3),
                       elevation: 2.0,
                       action: SnackBarAction(
-                        label: "DISMISS",
+                        label: "Dismiss",
                         onPressed: () {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
                         },
                       ),
                       content: Text(
-                        "Copied ID to Clipboard",
+                        "Copied Username",
                         style: GoogleFonts.jetBrainsMono(color: Colors.white),
                       )));
                 });
