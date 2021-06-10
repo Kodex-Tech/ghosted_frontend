@@ -15,7 +15,7 @@ class NitroTag extends StatelessWidget {
           color: discordFuchsia.withOpacity(0.1),
           borderRadius: BorderRadius.all(Radius.circular(50.0))),
       height: 40,
-      width: 120,
+      width: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -82,6 +82,45 @@ class VerifiedTag extends StatelessWidget {
   }
 }
 
+class MFATag extends StatelessWidget {
+  const MFATag();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: discordGreen.withOpacity(0.1),
+          borderRadius: BorderRadius.all(Radius.circular(50.0))),
+      height: 40,
+      width: 140,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.lock,
+            color: discordGreen.withOpacity(0.6),
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "MFA Enabled",
+                style: GoogleFonts.jetBrainsMono(
+                  color: discordGreen.withOpacity(0.87),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class UnVerifiedTag extends StatelessWidget {
   const UnVerifiedTag();
 
@@ -133,7 +172,107 @@ class _UserInformationState extends State<UserInformation> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: widget.userData.verified ? UnVerifiedTag() : SizedBox(),
-    );
+        padding: EdgeInsets.only(left: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Feather.mail,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                SelectableText(widget.userData.email,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24))
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Feather.phone,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                SelectableText(widget.userData.phone,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24))
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(
+                  AntDesign.idcard,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                SelectableText(widget.userData.id,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24)),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Feather.clock,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                SelectableText(widget.userData.accountCreated,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24)),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            widget.userData.verified ? VerifiedTag() : UnVerifiedTag(),
+            widget.userData.verified
+                ? SizedBox(
+                    height: 10,
+                  )
+                : SizedBox(),
+            widget.userData.mfa ? MFATag() : SizedBox(),
+            widget.userData.mfa
+                ? SizedBox(
+                    height: 10,
+                  )
+                : SizedBox(height: 10),
+            widget.userData.hasNitro ? NitroTag() : SizedBox()
+          ],
+        ));
   }
 }
