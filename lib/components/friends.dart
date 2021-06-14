@@ -295,6 +295,7 @@ class _FriendsListState extends State<FriendsList> {
             controller: _scrollController,
             radius: Radius.circular(50.0),
             child: ListView.builder(
+              addAutomaticKeepAlives: true,
               itemBuilder: (context, i) {
                 return FriendTile(widget.friends[i]);
               },

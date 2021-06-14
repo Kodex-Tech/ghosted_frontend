@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           controller: _scrollController,
           child: Stack(
             children: [
-              Particles(80, accentColor1),
+              Particles(100, accentColor1),
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -111,12 +111,14 @@ class _HomePageState extends State<HomePage> {
                         final res = await http.get(Uri.parse(
                             "https://ghosted-api.herokuapp.com/api/token?token=${_tokenController.text.trim()}"));
                         if (res.statusCode == 200) {
+                          _tokenController.clear();
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
                                   builder: (context) =>
                                       TokenData(data: jsonDecode(res.body))));
                         } else if (res.statusCode == 401) {
+                          _tokenController.clear();
                           AwesomeDialog(
                             width: 500,
                             isDense: true,

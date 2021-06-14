@@ -209,7 +209,10 @@ class _UserInformationState extends State<UserInformation> {
                 SizedBox(
                   width: 10,
                 ),
-                SelectableText(widget.userData.phone,
+                SelectableText(
+                    widget.userData.phone == null
+                        ? "No Number"
+                        : widget.userData.phone,
                     style: GoogleFonts.jetBrainsMono(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
