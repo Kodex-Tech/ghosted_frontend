@@ -100,7 +100,7 @@ class PremiumGuildTile extends StatelessWidget {
           ),
           Expanded(child: SizedBox()),
           IconButton(
-              tooltip: "Copy Username",
+              tooltip: "Copy Guild ID",
               icon: Icon(
                 Feather.copy,
                 color: accentColor1,

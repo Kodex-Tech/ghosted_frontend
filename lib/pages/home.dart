@@ -1,12 +1,17 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:http/http.dart' as http;
 import 'package:ghosted/pages/token_data.dart';
 import 'package:ghosted/styles/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter_particles/particles.dart';
+
+void _launchURL(String url) async =>
+    await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
 
 class HomePage extends StatefulWidget {
   HomePage();
@@ -163,7 +168,51 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _launchURL("https://github.com/kry021/ghosted");
+                          },
+                          child: Icon(
+                            FontAwesome.github,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        GestureDetector(
+                          child: Icon(
+                            AntDesign.API,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          onTap: () {
+                            _launchURL("https://github.com/kry021/ghosted-api");
+                          },
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            _launchURL("https://discord.gg/6UjJ4qgeWS");
+                          },
+                          child: Icon(
+                            FontAwesome5Brands.discord,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
