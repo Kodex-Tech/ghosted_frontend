@@ -1,22 +1,16 @@
 {
-    "name": "ghosted",
-    "short_name": "ghosted",
-    "start_url": ".",
+    "name": "Ghosted",
+    "short_name": "Ghosted",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#766CE5",
+    "theme_color": "#766CE5",
+    "description": "Ghosted - Use tokens to get discord account data",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
+            "src": "icons/icon.png",
             "type": "image/png"
         }
     ]
