@@ -25,6 +25,6 @@ More Info Coming Soon TM....
 - [API Repository]()
 - [API Docs]()
 - [Production Repo](https://github.com/kry021/ghosted_prod)
-- [Discord Server](https://discord.gg/6UjJ4qgeWS)
+- [Discord Server](https://discord.gg/3sZWhRsWza)
 ### Guides
 - [Get your discord token](https://www.youtube.com/watch?v=YEgFvgg7ZPI)

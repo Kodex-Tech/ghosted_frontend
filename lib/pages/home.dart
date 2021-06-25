@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            _launchURL("https://discord.gg/6UjJ4qgeWS");
+                            _launchURL("https://discord.gg/3sZWhRsWza");
                           },
                           child: Icon(
                             FontAwesome5Brands.discord,
