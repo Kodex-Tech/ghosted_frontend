@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ghosted/models/connection.dart';
 import 'package:ghosted/models/constants.dart';
 import 'package:ghosted/styles/colors.dart';
@@ -121,7 +122,9 @@ class _ConnectionsListState extends State<ConnectionsList> {
   @override
   Widget build(BuildContext context) {
     if (widget.connections.length == 0) {
-      return Text("No Connections");
+      return Center(
+        child: SvgPicture.asset('assets/svg/conn.svg'),
+      );
     }
     return ListView.builder(
         itemCount: widget.connections.length,

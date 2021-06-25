@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ghosted/models/constants.dart';
 import 'package:ghosted/models/nitro.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,12 +19,7 @@ class _NitroStatusState extends State<NitroStatus> {
     if (!widget.nitroData.hasNitro) {
       return Container(
         padding: EdgeInsets.only(left: 20),
-        child: Center(
-          child: Text(
-            "No Nitro",
-            style: GoogleFonts.jetBrainsMono(color: Colors.white),
-          ),
-        ),
+        child: Center(child: SvgPicture.asset('assets/svg/nitro.svg')),
       );
     } else {
       return Container(

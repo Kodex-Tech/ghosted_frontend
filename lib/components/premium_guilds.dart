@@ -1,6 +1,7 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ghosted/models/boosted_server.dart';
 import 'package:ghosted/styles/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -142,15 +143,19 @@ class PremiumGuilds extends StatefulWidget {
 class _PremiumGuildsState extends State<PremiumGuilds> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: widget.guilds.length,
-        itemBuilder: (context, i) {
-          return Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: PremiumGuildTile(
-              guild: widget.guilds[i],
-            ),
-          );
-        });
+    if (widget.guilds.length == 0) {
+      return Center(child: SvgPicture.asset('assets/svg/boost.svg'));
+    } else {
+      return ListView.builder(
+          itemCount: widget.guilds.length,
+          itemBuilder: (context, i) {
+            return Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: PremiumGuildTile(
+                guild: widget.guilds[i],
+              ),
+            );
+          });
+    }
   }
 }

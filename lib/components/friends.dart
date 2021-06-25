@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ghosted/models/friends.dart';
 import 'package:ghosted/styles/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -279,13 +280,7 @@ class _FriendsListState extends State<FriendsList> {
   Widget build(BuildContext context) {
     if (widget.friends.length == 0) {
       return Container(
-        child: Center(
-          child: Text(
-            "No Friends\nLonely Person",
-            style: GoogleFonts.jetBrainsMono(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
-          ),
-        ),
+        child: Center(child: SvgPicture.asset('assets/svg/friends.svg')),
       );
     } else {
       return Padding(

@@ -28,6 +28,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_icons: ^1.1.0
   flutter_particles: ^1.0.0+7
+  flutter_svg: ^0.22.0
   google_fonts: ^2.1.0
   http: ^0.13.3
   url_launcher: ^6.0.6
@@ -47,6 +48,11 @@ flutter:
   assets:
     - assets/default.jpg
     - assets/nitro_cut_dribble.gif
+    - assets/svg/billing.svg
+    - assets/svg/boost.svg
+    - assets/svg/nitro.svg
+    - assets/svg/friends.svg
+    - assets/svg/conn.svg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

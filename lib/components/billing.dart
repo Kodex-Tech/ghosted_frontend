@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ghosted/models/constants.dart';
 import 'package:ghosted/models/payment_method.dart';
 import 'package:ghosted/styles/colors.dart';
@@ -471,7 +472,9 @@ class _BillingDataState extends State<BillingData> {
   @override
   Widget build(BuildContext context) {
     if (widget.methods.length == 0) {
-      return Text("No Billing Methods");
+      return Center(
+        child: SvgPicture.asset('assets/svg/billing.svg'),
+      );
     }
     return ListView.builder(
       addAutomaticKeepAlives: true,
