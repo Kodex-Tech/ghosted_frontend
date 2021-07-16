@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:ghosted/components/billing.dart';
 import 'package:ghosted/components/connections.dart';
@@ -13,6 +15,7 @@ import 'package:ghosted/models/payment_method.dart';
 import 'package:ghosted/models/user.dart';
 import 'package:ghosted/styles/colors.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'dart:html' as webFile;
 import 'package:google_fonts/google_fonts.dart';
 
 class TokenData extends StatefulWidget {
@@ -84,6 +87,38 @@ class _TokenDataState extends State<TokenData> with TickerProviderStateMixin {
             ])),
           ],
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              var fileBlob = webFile.Blob(
+                  [jsonEncode(widget.data)], 'application/json', 'native');
+              var anchorElement = webFile.AnchorElement(
+                href: webFile.Url.createObjectUrlFromBlob(fileBlob).toString(),
+              )
+                ..setAttribute("download", widget.data['username'] + ".json")
+                ..click();
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                height: 50,
+                alignment: Alignment.center,
+                child: Text(
+                  'Download Data',
+                  style: GoogleFonts.jetBrainsMono(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [accentColor1, accentColor2])),
+              ),
+            ),
+          ),
+        ],
         bottom: TabBar(
           indicatorColor: accentColor1,
           labelStyle: GoogleFonts.jetBrainsMono(color: Colors.white),
