@@ -20,6 +20,22 @@ Ghosted is a tool to get account details of a discord account using the user's t
 More Info Coming Soon TM....
 </center>
 
+## Setup
+
+### 1) get dependencies
+```bash
+flutter pub get
+```
+
+### 2) set api url
+replace `https://ghosted-api.herokuapp.com` in `lib/pages/home.dart` on `line 117` with your API url.
+
+for example: `https://ghosted-api.herokuapp.com` -> `http://localhost:2500`
+
+### 3) run the website
+```bash
+flutter run
+```
 
 ### Related Docs/Links
 - [API Repository](https://github.com/Kodex-Tech/ghosted_api)
