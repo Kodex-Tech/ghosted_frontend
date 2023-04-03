@@ -12,7 +12,7 @@
 
 <br>
 
-Ghosted is a tool to get account details of a discord account using the User Token
+Ghosted is a tool to get account details of a discord account using the user's token.
 
 
 </center>
@@ -22,9 +22,7 @@ More Info Coming Soon TM....
 
 
 ### Related Docs/Links
-- [API Repository]()
-- [API Docs]()
-- [Production Repo](https://github.com/kry021/ghosted_prod)
-- [Discord Server](https://discord.gg/3sZWhRsWza)
+- [API Repository](https://github.com/Kodex-Tech/ghosted_api)
+- [Production (compiled) Repo](https://github.com/Kodex-Tech/ghosted_prod)
 ### Guides
 - [Get your discord token](https://www.youtube.com/watch?v=YEgFvgg7ZPI)
